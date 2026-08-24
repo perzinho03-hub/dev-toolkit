@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#">DEV<span>TOOLKIT</span></a>
+
+  <nav>
+    <a href="#tools">Tools</a>
+    <a href="#resources">Resources</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <button id="themeBtn" class="icon-btn">☾</button>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="badge">FREE DEVELOPER TOOLS</div>
+
+  <h1>Build better.<br><span>Faster.</span></h1>
+
+  <p>
+    A clean collection of tools and resources for developers,
+    Roblox creators and designers.
+  </p>
+
+  <div class="hero-actions">
+    <a class="btn primary" href="#tools">Explore tools</a>
+    <a class="btn secondary" href="#resources">Resources</a>
+  </div>
+</section>
+
+<section id="tools" class="section">
+
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">TOOLBOX</p>
+      <h2>Useful tools</h2>
+    </div>
+
+    <input id="search" type="search" placeholder="Search tools...">
+  </div>
+
+  <div class="grid">
+
+    <article class="card" data-name="color picker color design">
+      <div class="card-icon">🎨</div>
+      <h3>Color Picker</h3>
+      <p>Pick a color and copy its HEX or RGB value.</p>
+      <button class="card-link" id="openPicker">Open tool →</button>
+    </article>
+
+    <article class="card" data-name="hex converter color rgb">
+      <div class="card-icon">#</div>
+      <h3>HEX / RGB</h3>
+      <p>Convert between HEX and RGB color values.</p>
+
+      <div class="mini-tool">
+        <input id="hexInput" value="#5865F2" maxlength="7">
+        <button id="convertBtn">Convert</button>
+        <small id="rgbOutput">RGB: 88, 101, 242</small>
+      </div>
+    </article>
+
+    <article class="card" data-name="roblox ui sizing calculator">
+      <div class="card-icon">▦</div>
+      <h3>UI Sizing</h3>
+      <p>Quickly calculate common Roblox UI scale values.</p>
+
+      <div class="mini-tool">
+        <input id="pxInput" type="number" value="320">
+        <button id="scaleBtn">Calculate</button>
+        <small id="scaleOutput">Scale: 0.320</small>
+      </div>
+    </article>
+
+    <article class="card" data-name="random name generator">
+      <div class="card-icon">✦</div>
+      <h3>Name Generator</h3>
+      <p>Generate short names for projects, games and tools.</p>
+
+      <button class="card-link" id="nameBtn">Generate →</button>
+      <small id="nameOutput">Click generate</small>
+    </article>
+
+  </div>
+</section>
+
+<section id="resources" class="section">
+
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">RESOURCES</p>
+      <h2>Useful websites</h2>
+    </div>
+  </div>
+
+  <div class="resource-grid">
+
+    <a class="resource" href="https://iconify.design/" target="_blank">
+      <strong>Iconify</strong>
+      <span>Huge collection of icons →</span>
+    </a>
+
+    <a class="resource" href="https://lucide.dev/" target="_blank">
+      <strong>Lucide</strong>
+      <span>Clean open-source icons →</span>
+    </a>
+
+    <a class="resource" href="https://coolors.co/" target="_blank">
+      <strong>Coolors</strong>
+      <span>Color palettes for projects →</span>
+    </a>
+
+    <a class="resource" href="https://create.roblox.com/docs" target="_blank">
+      <strong>Roblox Creator Hub</strong>
+      <span>Official Roblox documentation →</span>
+    </a>
+
+  </div>
+</section>
+
+<section id="about" class="about">
+  <p class="eyebrow">ABOUT</p>
+  <h2>Made for creators.</h2>
+  <p>
+    Dev Toolkit is a simple place for useful development tools
+    and resources.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Dev Toolkit
+</footer>
+
+<div class="modal hidden" id="pickerModal">
+
+  <div class="modal-box">
+
+    <button class="close" id="closePicker">×</button>
+
+    <p class="eyebrow">COLOR PICKER</p>
+    <h2>Pick a color</h2>
+
+    <input
+      class="native-picker"
+      id="colorInput"
+      type="color"
+      value="#5865F2"
+    >
+
+    <div class="color-preview" id="colorPreview"></div>
+
+    <div class="color-value">
+      <input id="colorHex" value="#5865F2" maxlength="7">
+      <button id="copyColor">Copy</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
