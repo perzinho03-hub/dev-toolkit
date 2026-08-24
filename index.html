@@ -3,173 +3,332 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dev Toolkit</title>
+  <meta name="theme-color" content="#08090d">
+  <title>DevToolkit</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="background-grid"></div>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
 
-<header class="nav">
-  <a class="logo" href="#">DEV<span>TOOLKIT</span></a>
+  <header class="nav">
+    <a href="#" class="logo">DEV<span>TOOLKIT</span></a>
 
-  <nav>
-    <a href="#tools">Tools</a>
-    <a href="#resources">Resources</a>
-    <a href="#about">About</a>
-  </nav>
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#resources">Resources</a>
+      <a href="#about">About</a>
+    </nav>
 
-  <button id="themeBtn" class="icon-btn">☾</button>
-</header>
-
-<main>
-
-<section class="hero">
-  <div class="badge">FREE DEVELOPER TOOLS</div>
-
-  <h1>Build better.<br><span>Faster.</span></h1>
-
-  <p>
-    A clean collection of tools and resources for developers,
-    Roblox creators and designers.
-  </p>
-
-  <div class="hero-actions">
-    <a class="btn primary" href="#tools">Explore tools</a>
-    <a class="btn secondary" href="#resources">Resources</a>
-  </div>
-</section>
-
-<section id="tools" class="section">
-
-  <div class="section-head">
-    <div>
-      <p class="eyebrow">TOOLBOX</p>
-      <h2>Useful tools</h2>
+    <div class="nav-actions">
+      <button id="commandBtn" class="small-btn">⌘ K</button>
+      <button id="themeBtn" class="icon-btn">☾</button>
     </div>
+  </header>
 
-    <input id="search" type="search" placeholder="Search tools...">
-  </div>
-
-  <div class="grid">
-
-    <article class="card" data-name="color picker color design">
-      <div class="card-icon">🎨</div>
-      <h3>Color Picker</h3>
-      <p>Pick a color and copy its HEX or RGB value.</p>
-      <button class="card-link" id="openPicker">Open tool →</button>
-    </article>
-
-    <article class="card" data-name="hex converter color rgb">
-      <div class="card-icon">#</div>
-      <h3>HEX / RGB</h3>
-      <p>Convert between HEX and RGB color values.</p>
-
-      <div class="mini-tool">
-        <input id="hexInput" value="#5865F2" maxlength="7">
-        <button id="convertBtn">Convert</button>
-        <small id="rgbOutput">RGB: 88, 101, 242</small>
+  <main>
+    <section class="hero">
+      <div class="badge">
+        <span class="dot"></span>
+        FREE DEVELOPER TOOLS
       </div>
-    </article>
 
-    <article class="card" data-name="roblox ui sizing calculator">
-      <div class="card-icon">▦</div>
-      <h3>UI Sizing</h3>
-      <p>Quickly calculate common Roblox UI scale values.</p>
+      <h1>Build better.<br><span>Faster.</span></h1>
 
-      <div class="mini-tool">
-        <input id="pxInput" type="number" value="320">
-        <button id="scaleBtn">Calculate</button>
-        <small id="scaleOutput">Scale: 0.320</small>
+      <p>
+        A collection of useful tools and resources for developers,
+        Roblox creators and designers.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#tools" class="btn primary">Explore Tools</a>
+        <a href="#resources" class="btn secondary">Resources</a>
       </div>
-    </article>
 
-    <article class="card" data-name="random name generator">
-      <div class="card-icon">✦</div>
-      <h3>Name Generator</h3>
-      <p>Generate short names for projects, games and tools.</p>
+      <div class="status">
+        <span class="status-dot"></span>
+        All systems operational
+      </div>
+    </section>
 
-      <button class="card-link" id="nameBtn">Generate →</button>
-      <small id="nameOutput">Click generate</small>
-    </article>
+    <section id="tools" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">TOOLBOX</p>
+          <h2>Useful tools</h2>
+        </div>
 
-  </div>
-</section>
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="Search tools...">
+          <kbd>CTRL K</kbd>
+        </div>
+      </div>
 
-<section id="resources" class="section">
+      <div class="categories">
+        <button class="category active" data-category="all">All</button>
+        <button class="category" data-category="colors">Colors</button>
+        <button class="category" data-category="roblox">Roblox</button>
+        <button class="category" data-category="code">Code</button>
+        <button class="category" data-category="utilities">Utilities</button>
+      </div>
 
-  <div class="section-head">
-    <div>
-      <p class="eyebrow">RESOURCES</p>
-      <h2>Useful websites</h2>
+      <div class="grid" id="toolGrid">
+
+        <article class="card tool-card"
+          data-name="color picker colors"
+          data-category="colors"
+          data-tool="color">
+
+          <div class="card-top">
+            <div class="card-icon purple">🎨</div>
+            <button class="favorite" data-favorite="color">☆</button>
+          </div>
+
+          <h3>Color Picker</h3>
+          <p>Pick colors and copy HEX, RGB and HSL values.</p>
+
+          <button class="card-link open-tool" data-tool="color">
+            Open tool →
+          </button>
+        </article>
+
+        <article class="card tool-card"
+          data-name="hex rgb converter colors"
+          data-category="colors"
+          data-tool="converter">
+
+          <div class="card-top">
+            <div class="card-icon blue">#</div>
+            <button class="favorite" data-favorite="converter">☆</button>
+          </div>
+
+          <h3>HEX / RGB</h3>
+          <p>Convert HEX colors into RGB values instantly.</p>
+
+          <button class="card-link open-tool" data-tool="converter">
+            Open tool →
+          </button>
+        </article>
+
+        <article class="card tool-card"
+          data-name="roblox ui sizing calculator"
+          data-category="roblox"
+          data-tool="ui">
+
+          <div class="card-top">
+            <div class="card-icon orange">▦</div>
+            <button class="favorite" data-favorite="ui">☆</button>
+          </div>
+
+          <h3>UI Sizing</h3>
+          <p>Quickly calculate useful Roblox UI values.</p>
+
+          <button class="card-link open-tool" data-tool="ui">
+            Open tool →
+          </button>
+        </article>
+
+        <article class="card tool-card"
+          data-name="random name generator"
+          data-category="utilities"
+          data-tool="names">
+
+          <div class="card-top">
+            <div class="card-icon green">✦</div>
+            <button class="favorite" data-favorite="names">☆</button>
+          </div>
+
+          <h3>Name Generator</h3>
+          <p>Generate names for projects, games and tools.</p>
+
+          <button class="card-link open-tool" data-tool="names">
+            Open tool →
+          </button>
+        </article>
+
+        <article class="card tool-card"
+          data-name="json formatter code"
+          data-category="code"
+          data-tool="json">
+
+          <div class="card-top">
+            <div class="card-icon cyan">{ }</div>
+            <button class="favorite" data-favorite="json">☆</button>
+          </div>
+
+          <h3>JSON Formatter</h3>
+          <p>Format messy JSON into readable structured data.</p>
+
+          <button class="card-link open-tool" data-tool="json">
+            Open tool →
+          </button>
+        </article>
+
+        <article class="card tool-card"
+          data-name="text counter utilities"
+          data-category="utilities"
+          data-tool="text">
+
+          <div class="card-top">
+            <div class="card-icon pink">Aa</div>
+            <button class="favorite" data-favorite="text">☆</button>
+          </div>
+
+          <h3>Text Counter</h3>
+          <p>Count characters, words and lines in text.</p>
+
+          <button class="card-link open-tool" data-tool="text">
+            Open tool →
+          </button>
+        </article>
+
+      </div>
+
+      <div id="noResults" class="no-results hidden">
+        No tools found.
+      </div>
+    </section>
+
+    <section class="section recently-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">HISTORY</p>
+          <h2>Recently used</h2>
+        </div>
+      </div>
+
+      <div id="recentTools" class="recent-tools">
+        <p class="muted">Your recently used tools will appear here.</p>
+      </div>
+    </section>
+
+    <section id="resources" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">RESOURCES</p>
+          <h2>Useful websites</h2>
+        </div>
+
+        <input id="resourceSearch" type="search" placeholder="Search resources...">
+      </div>
+
+      <div class="resource-grid">
+
+        <a class="resource"
+          data-resource="iconify icons"
+          href="https://iconify.design/"
+          target="_blank">
+          <div class="resource-icon">◈</div>
+          <div>
+            <strong>Iconify</strong>
+            <span>Huge collection of icons</span>
+          </div>
+          <b>↗</b>
+        </a>
+
+        <a class="resource"
+          data-resource="lucide icons"
+          href="https://lucide.dev/"
+          target="_blank">
+          <div class="resource-icon">◇</div>
+          <div>
+            <strong>Lucide</strong>
+            <span>Clean open-source icons</span>
+          </div>
+          <b>↗</b>
+        </a>
+
+        <a class="resource"
+          data-resource="coolors colors palettes"
+          href="https://coolors.co/"
+          target="_blank">
+          <div class="resource-icon">●</div>
+          <div>
+            <strong>Coolors</strong>
+            <span>Color palettes for projects</span>
+          </div>
+          <b>↗</b>
+        </a>
+
+        <a class="resource"
+          data-resource="roblox creator hub documentation"
+          href="https://create.roblox.com/docs"
+          target="_blank">
+          <div class="resource-icon">R</div>
+          <div>
+            <strong>Roblox Creator Hub</strong>
+            <span>Official Roblox documentation</span>
+          </div>
+          <b>↗</b>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <p class="eyebrow">ABOUT</p>
+
+      <h2>Made for creators.</h2>
+
+      <p>
+        DevToolkit brings useful development tools and resources
+        into one simple place.
+      </p>
+
+      <div class="about-actions">
+        <a class="btn secondary" href="https://github.com/perzinho03-hub" target="_blank">
+          GitHub ↗
+        </a>
+
+        <a class="btn secondary" href="#" id="discordBtn">
+          Discord ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 DevToolkit</span>
+    <span>Built for creators.</span>
+  </footer>
+
+  <!-- Tool modal -->
+
+  <div id="toolModal" class="modal hidden">
+    <div class="modal-box">
+
+      <button class="close" id="closeModal">×</button>
+
+      <div id="modalContent"></div>
+
     </div>
   </div>
 
-  <div class="resource-grid">
+  <!-- Command palette -->
 
-    <a class="resource" href="https://iconify.design/" target="_blank">
-      <strong>Iconify</strong>
-      <span>Huge collection of icons →</span>
-    </a>
+  <div id="commandPalette" class="command-overlay hidden">
+    <div class="command-box">
 
-    <a class="resource" href="https://lucide.dev/" target="_blank">
-      <strong>Lucide</strong>
-      <span>Clean open-source icons →</span>
-    </a>
+      <div class="command-search">
+        <span>⌕</span>
+        <input id="commandSearch" placeholder="Search tools...">
+        <kbd>ESC</kbd>
+      </div>
 
-    <a class="resource" href="https://coolors.co/" target="_blank">
-      <strong>Coolors</strong>
-      <span>Color palettes for projects →</span>
-    </a>
+      <div id="commandResults"></div>
 
-    <a class="resource" href="https://create.roblox.com/docs" target="_blank">
-      <strong>Roblox Creator Hub</strong>
-      <span>Official Roblox documentation →</span>
-    </a>
+      <div class="command-footer">
+        <span>↑↓ Navigate</span>
+        <span>Enter Open</span>
+        <span>Esc Close</span>
+      </div>
 
-  </div>
-</section>
-
-<section id="about" class="about">
-  <p class="eyebrow">ABOUT</p>
-  <h2>Made for creators.</h2>
-  <p>
-    Dev Toolkit is a simple place for useful development tools
-    and resources.
-  </p>
-</section>
-
-</main>
-
-<footer>
-  © 2026 Dev Toolkit
-</footer>
-
-<div class="modal hidden" id="pickerModal">
-
-  <div class="modal-box">
-
-    <button class="close" id="closePicker">×</button>
-
-    <p class="eyebrow">COLOR PICKER</p>
-    <h2>Pick a color</h2>
-
-    <input
-      class="native-picker"
-      id="colorInput"
-      type="color"
-      value="#5865F2"
-    >
-
-    <div class="color-preview" id="colorPreview"></div>
-
-    <div class="color-value">
-      <input id="colorHex" value="#5865F2" maxlength="7">
-      <button id="copyColor">Copy</button>
     </div>
-
   </div>
-</div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
